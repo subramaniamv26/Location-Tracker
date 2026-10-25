@@ -1,0 +1,12 @@
+# Render Blueprint: free Docker web service for the backend
+services:
+  - type: web
+    name: location-tracker-api
+    runtime: docker
+    plan: free
+    dockerContext: ./backend
+    dockerfilePath: ./backend/Dockerfile
+    healthCheckPath: /
+    envVars:
+      - key: API_KEY
+        generateValue: true
